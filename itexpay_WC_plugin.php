@@ -290,6 +290,8 @@ function init_ItexPay_gateway_class() {
                     } else {
                         header("Location: http://localhost/wordpress/index.php/checkout/");
                     }
+                } else {
+                    header("Location: http://localhost/wordpress/index.php/checkout/");
                 }
             }
         }
