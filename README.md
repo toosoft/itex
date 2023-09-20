@@ -15,6 +15,6 @@ You can retrieve your API keys by signing up in [ItexPay](https://itexpay.com).
 Your customers can click the payment button anytime and from any device to make payment to you.
 
 - Visit the transactions page to view all your transactions.
-For more ItexPay Plugin features and usage, visit the Read Me in the Home Page of this plugin. 
+For more ItexPay Plugin features and usage, visit the Read Me menu that will display in the Home Page after the installation of this plugin. 
 
 ### You have your ItexPay! You have payments in one click! You have more!
