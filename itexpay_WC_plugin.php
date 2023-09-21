@@ -7,7 +7,7 @@
 /*
 Plugin Name: ItexPay WC_Plugin
 Plugin URI: http://wordpress.org/plugins/itexpay_plugin/
-Description: This Plugin is not just for web acquiring. You can now access all our Itex services in one click! Thanks to ITEX | WOOCOMMERCE
+Description: This ItexPay Plugin is used for web acquiring in WOOCOMMERCE.
 Author: ITEX Integrated Services
 Version: 1.0.0
 Author URI: https://iisysgroup.com
@@ -78,6 +78,7 @@ function init_ItexPay_gateway_class() {
 
 
                 // Actions hook.
+                add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
                 add_action('woocommerce_api_callback', array($this, 'check_response'));
 
             }
@@ -149,7 +150,7 @@ function init_ItexPay_gateway_class() {
                         'type' => 'text',
                         'css' => 'width:50em;',
                         'description' => __('Payment method description that the customer will see on your live checkout.', 'woocommerce'),
-                        'default' => __('', 'woocommerce'),
+                        'default' => __('Card Payments | bank transfers | USSD payments | QR codes, etc', 'woocommerce'),
                         'desc_tip' => true,
                     ),
                     'Live_Public_Key' => array(
@@ -280,7 +281,7 @@ function init_ItexPay_gateway_class() {
 
                         $order = wc_get_order($order_id);
 
-                        $new_status = 'wc-processing'; // Replace with the desired status.
+                        $new_status = 'wc-completed'; // Replace with the desired status.
                         $note = $paymentid;
 
                         $order->update_status($new_status, $note);
